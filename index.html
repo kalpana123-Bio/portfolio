@@ -355,8 +355,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 125%;   /* Compensa el escalado inverso de 0.8x (100 / 0.8) */
-            height: 125%;  /* Compensa el escalado inverso de 0.8x (100 / 0.8) */
+            width: 125%;   
+            height: 125%;  
             border: none;
             background-color: #ffffff;
             transform: scale(0.8);
@@ -453,29 +453,30 @@
             border-top: 3px solid var(--primary);
         }
 
+        /* Expanded Grid structure to support 4 modules smoothly */
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.4fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr 1.3fr 1fr 1fr;
+            gap: 16px;
             margin-top: 25px;
         }
 
-        .contact-card-link {
+        .contact-card-link, .contact-card-static {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 20px;
+            gap: 12px;
+            padding: 18px 16px;
             background-color: var(--bg-main);
             border: 1px solid var(--border);
             border-radius: 14px;
             color: var(--text-main);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
         }
 
-        .contact-card-link strong {
+        .contact-card-link strong, .contact-card-static strong {
             color: var(--primary);
             transition: color 0.3s;
         }
@@ -490,16 +491,6 @@
             color: #ffffff;
         }
 
-        .location-badge {
-            margin-top: 20px;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
         footer {
             text-align: center;
             padding: 40px 0;
@@ -508,7 +499,13 @@
             font-size: 0.75rem;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
             .contact-grid {
                 grid-template-columns: 1fr;
             }
@@ -773,7 +770,7 @@
                     <span>📞</span>
                     <div>
                         <strong>Call me at</strong>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">+91 9141050502</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">+91 9141050502</div>
                     </div>
                 </a>
                 
@@ -781,7 +778,7 @@
                     <span>✉️</span>
                     <div>
                         <strong>Mail me at</strong>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px; white-space: nowrap;">kalpana.psn2322002@gmail.com</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px; white-space: nowrap;">kalpana.psn2322002@gmail.com</div>
                     </div>
                 </a>
 
@@ -789,11 +786,19 @@
                     <span>🔗</span>
                     <div>
                         <strong>Connect at</strong>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">LinkedIn Stream</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">LinkedIn Stream</div>
                     </div>
                 </a>
+
+                <!-- New Standalone Location Module -->
+                <div class="contact-card-static">
+                    <span>📍</span>
+                    <div>
+                        <strong>Operating Base</strong>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">Bangalore, India</div>
+                    </div>
+                </div>
             </div>
-            <div class="location-badge">📍 Operating Base: Bangalore, India</div>
         </section>
 
         <footer>
