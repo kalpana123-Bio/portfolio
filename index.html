@@ -44,7 +44,7 @@
             margin: 0 auto;
         }
 
-        /* Re-Styled Executive Bio-Console Header */
+        /* Streamlined Executive Bio-Console Header */
         header {
             background: linear-gradient(135deg, #0f1526 0%, #090d1a 100%);
             padding: 50px 45px;
@@ -73,8 +73,8 @@
         /* Bio-Glow Photo Frame */
         .profile-photo-container {
             flex-shrink: 0;
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             padding: 4px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -99,7 +99,6 @@
             flex-grow: 1;
         }
 
-        /* Asymmetric Capitalization Style (+5px on Initials) */
         header h1 {
             font-family: 'Lora', serif;
             font-size: 2.7rem;
@@ -119,41 +118,10 @@
 
         header p.title {
             font-family: 'Lora', serif;
-            font-size: 1.2rem;
-            font-style: italic;
+            font-size: 1.3rem;
             color: var(--accent);
             font-weight: 500;
-            margin-bottom: 24px;
-        }
-
-        /* Elegant Clean Grid Contact Panel */
-        .contact-info {
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px 20px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .contact-info a {
-            color: var(--text-main);
-            text-decoration: none;
-            transition: all 0.2s ease;
-            border-bottom: 1px dashed transparent;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-            text-shadow: 0 0 8px var(--primary-glow);
+            letter-spacing: 0.02em;
         }
 
         /* Console Panels (Sections) */
@@ -254,6 +222,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 166px;
             margin-bottom: 16px;
         }
 
@@ -293,7 +262,7 @@
             list-style-type: square;
         }
 
-        /* Improvised Production-grade Web Browser Canvas Preview */
+        /* Web Browser Canvas Preview */
         .preview-label {
             display: flex;
             align-items: center;
@@ -368,7 +337,6 @@
             font-size: 0.75rem;
         }
 
-        /* Fluid 16:10 Premium Website Rendering Box */
         .preview-iframe-wrapper {
             position: relative;
             width: 100%;
@@ -470,6 +438,58 @@
             font-size: 0.9rem;
         }
 
+        /* Relocated Interactivity Node Panel (Contact Footer) */
+        .connect-console {
+            background: linear-gradient(135deg, #0f1526 0%, #0c1222 100%);
+            border-top: 3px solid var(--primary);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .contact-card-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background-color: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-card-link strong {
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+
+        .contact-card-link:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .contact-card-link:hover strong {
+            color: #ffffff;
+        }
+
+        .location-badge {
+            margin-top: 20px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         footer {
             text-align: center;
             padding: 40px 0;
@@ -484,11 +504,6 @@
                 text-align: center;
                 padding: 40px 25px;
             }
-            .contact-info {
-                grid-template-columns: 1fr;
-                justify-items: center;
-                gap: 12px;
-            }
             .browser-address-bar {
                 margin-right: 0;
             }
@@ -497,6 +512,9 @@
                 align-items: flex-start;
                 gap: 8px;
             }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -504,22 +522,14 @@
 
     <div class="container">
         
-        <!-- Upgraded Bio-Console Header Base -->
+        <!-- Streamlined Executive Bio-Console Header -->
         <header>
             <div class="profile-photo-container">
                 <img src="image.jpg" alt="KALPANA P Profile Frame" class="profile-photo">
             </div>
             <div class="header-content">
                 <h1><span class="large-initial">K</span>ALPANA <span class="large-initial">P</span></h1>
-                <p class="title">Bioinformatician and Researcher</p>
-                
-                <!-- Polished Clean Info Matrix Row with Live Clickable Hyperlinks -->
-                <div class="contact-info">
-                    <div class="contact-item">📍 Bangalore, India</div>
-                    <div class="contact-item">📞 <a href="tel:+919141050502">+91 9141050502</a></div>
-                    <div class="contact-item">✉️ <a href="mailto:kalpana.psn2322002@gmail.com">kalpana.psn2322002@gmail.com</a></div>
-                    <div class="contact-item">🔗 <a href="https://bit.ly/4ez7dn8" target="_blank">LinkedIn</a></div>
-                </div>
+                <p class="title">Bioinformatician &amp; Multi-Omics Researcher</p>
             </div>
         </header>
 
@@ -740,6 +750,37 @@
                 <li><strong>NPTEL Certificate on Genome Editing and Engineering</strong> (2024)</li>
                 <li><strong>Machine Learning &amp; AI Techniques in Metagenomics</strong> – Leucinrichbio Matrix (2024)</li>
             </ul>
+        </section>
+
+        <!-- Relocated & Re-Engineered Connection Node Panel -->
+        <section id="contact" class="connect-console">
+            <h2>Establish Connection Matrix</h2>
+            <div class="contact-grid">
+                <a href="tel:+919141050502" class="contact-card-link">
+                    <span>📞</span>
+                    <div>
+                        <strong>Call me at</strong>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">+91 9141050502</div>
+                    </div>
+                </a>
+                
+                <a href="mailto:kalpana.psn2322002@gmail.com" class="contact-card-link">
+                    <span>✉️</span>
+                    <div>
+                        <strong>Mail me at</strong>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">kalpana.psn2322002@gmail.com</div>
+                    </div>
+                </a>
+
+                <a href="https://bit.ly/4ez7dn8" target="_blank" class="contact-card-link">
+                    <span>🔗</span>
+                    <div>
+                        <strong>Connect at</strong>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">LinkedIn / Professional Stream</div>
+                    </div>
+                </a>
+            </div>
+            <div class="location-badge">📍 Operating Base: Bangalore, India</div>
         </section>
 
         <footer>
