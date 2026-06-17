@@ -453,7 +453,7 @@
             border-top: 3px solid var(--primary);
         }
 
-        /* Expanded Grid structure to support 4 modules smoothly */
+        /* Matrix grid layout */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.3fr 1fr 1fr;
@@ -461,17 +461,18 @@
             margin-top: 25px;
         }
 
+        /* Reduced baseline typography inside contact block by 3px */
         .contact-card-link, .contact-card-static {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 18px 16px;
+            padding: 18px 14px;
             background-color: var(--bg-main);
             border: 1px solid var(--border);
             border-radius: 14px;
             color: var(--text-main);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.76rem; /* Reduced ~3px down from 0.95rem */
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
         }
@@ -489,6 +490,14 @@
 
         .contact-card-link:hover strong {
             color: #ffffff;
+        }
+
+        /* Inner specific label rules reduced ~3px */
+        .contact-details-text {
+            font-size: 0.62rem !important; /* Reduced ~3px down from 0.8rem */
+            color: var(--text-muted); 
+            font-family: 'Fira Code', monospace; 
+            margin-top: 3px;
         }
 
         footer {
@@ -762,7 +771,7 @@
             </ul>
         </section>
 
-        <!-- Connection Node Panel -->
+        <!-- Connection Node Panel with -3px typography adjustments applied -->
         <section id="contact" class="connect-console">
             <h2>Establish Connection Matrix</h2>
             <div class="contact-grid">
@@ -770,7 +779,7 @@
                     <span>📞</span>
                     <div>
                         <strong>Call me at</strong>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">+91 9141050502</div>
+                        <div class="contact-details-text">+91 9141050502</div>
                     </div>
                 </a>
                 
@@ -778,7 +787,7 @@
                     <span>✉️</span>
                     <div>
                         <strong>Mail me at</strong>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px; white-space: nowrap;">kalpana.psn2322002@gmail.com</div>
+                        <div class="contact-details-text" style="white-space: nowrap;">kalpana.psn2322002@gmail.com</div>
                     </div>
                 </a>
 
@@ -786,16 +795,15 @@
                     <span>🔗</span>
                     <div>
                         <strong>Connect at</strong>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">LinkedIn Stream</div>
+                        <div class="contact-details-text">LinkedIn - Kalpana P</div>
                     </div>
                 </a>
 
-                <!-- New Standalone Location Module -->
                 <div class="contact-card-static">
                     <span>📍</span>
                     <div>
                         <strong>Operating Base</strong>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">Bangalore, India</div>
+                        <div class="contact-details-text">Bangalore, India</div>
                     </div>
                 </div>
             </div>
