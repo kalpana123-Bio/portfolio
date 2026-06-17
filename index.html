@@ -146,12 +146,13 @@
         .contact-info a {
             color: var(--text-main);
             text-decoration: none;
-            transition: all 0.2s;
-            border-bottom: 1px transparent;
+            transition: all 0.2s ease;
+            border-bottom: 1px dashed transparent;
         }
 
         .contact-info a:hover {
             color: var(--primary);
+            border-bottom-color: var(--primary);
             text-shadow: 0 0 8px var(--primary-glow);
         }
 
@@ -512,10 +513,10 @@
                 <h1><span class="large-initial">K</span>ALPANA <span class="large-initial">P</span></h1>
                 <p class="title">Bioinformatician and Researcher</p>
                 
-                <!-- Polished Clean Info Matrix Row -->
+                <!-- Polished Clean Info Matrix Row with Live Clickable Hyperlinks -->
                 <div class="contact-info">
                     <div class="contact-item">📍 Bangalore, India</div>
-                    <div class="contact-item">📞 +91 9141050502</div>
+                    <div class="contact-item">📞 <a href="tel:+919141050502">+91 9141050502</a></div>
                     <div class="contact-item">✉️ <a href="mailto:kalpana.psn2322002@gmail.com">kalpana.psn2322002@gmail.com</a></div>
                     <div class="contact-item">🔗 <a href="https://bit.ly/4ez7dn8" target="_blank">LinkedIn</a></div>
                 </div>
