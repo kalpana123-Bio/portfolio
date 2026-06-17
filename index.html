@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalpana P | Bioinformatics Portfolio</title>
-    <!-- Premium Fonts -->
+    <title>KALPANA P | Deep-Dive Bioinformatics Portfolio</title>
+    <!-- High-Impact Tech Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-main: #0b0f19;
-            --bg-card: #131a26;
-            --primary: #38bdf8;
-            --primary-muted: #0369a1;
-            --accent: #2dd4bf;
-            --accent-muted: #115e59;
-            --text-main: #f1f5f9;
+            --bg-main: #070a13;
+            --bg-card: #0f1526;
+            --primary: #00f2fe;
+            --primary-glow: rgba(0, 242, 254, 0.15);
+            --accent: #4facfe;
+            --accent-glow: rgba(79, 172, 254, 0.15);
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: #1e293b;
+            --dna-green: #10b981;
         }
 
         * {
@@ -29,11 +30,13 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.6;
             padding: 40px 20px;
+            background-image: radial-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 0);
+            background-size: 24px 24px;
         }
 
         .container {
@@ -41,37 +44,55 @@
             margin: 0 auto;
         }
 
-        /* Premium Hero Section Layout */
+        /* Sci-Fi Bio-Console Header */
         header {
-            background: linear-gradient(135deg, #131a26 0%, #0f172a 100%);
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, #0f1526 0%, #090d1a 100%);
+            padding: 45px;
+            border-radius: 24px;
+            margin-bottom: 35px;
             border: 1px solid var(--border);
+            position: relative;
             display: flex;
             align-items: center;
             gap: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
         }
 
-        /* Premium Aesthetic Photo Frame */
+        header::before {
+            content: "SYSTEM_STATUS: ONLINE";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.65rem;
+            color: var(--dna-green);
+            letter-spacing: 0.1em;
+        }
+
+        /* Bio-Glow Photo Frame */
         .profile-photo-container {
             flex-shrink: 0;
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic cellular shape */
             padding: 4px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            box-shadow: 0 4px 20px rgba(45, 212, 191, 0.2);
+            animation: morphCell 8s ease-in-out infinite alternate;
+            box-shadow: 0 0 25px var(--primary-glow);
+        }
+
+        @keyframes morphCell {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; }
         }
 
         .profile-photo {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
             object-fit: cover;
-            background-color: #1e293b;
-            border: 3px solid var(--bg-card);
+            background-color: #161f38;
+            border-radius: inherit;
         }
 
         .header-content {
@@ -80,33 +101,34 @@
 
         /* Capitalized Name with Enlarged K and P (+5px) */
         header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.7rem;
             font-weight: 700;
-            letter-spacing: -0.01em;
-            margin-bottom: 6px;
-            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+            background: linear-gradient(to right, #ffffff, var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         header h1 span.large-initial {
-            font-size: calc(2.5rem + 5px);
+            font-size: calc(2.7rem + 5px);
             font-weight: 700;
+            color: var(--primary);
         }
 
         header p.title {
-            font-size: 1.2rem;
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 18px;
-            letter-spacing: -0.01em;
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         .contact-info {
-            border-top: 1px solid var(--border);
+            border-top: 1px dashed var(--border);
             padding-top: 18px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
         }
 
@@ -116,47 +138,55 @@
         }
 
         .contact-info a {
-            color: var(--accent);
+            color: var(--primary);
             text-decoration: none;
-            transition: color 0.2s;
+            transition: all 0.2s;
         }
 
         .contact-info a:hover {
-            color: #2ed4bfcc;
-            text-decoration: underline;
+            color: #ffffff;
+            text-shadow: 0 0 8px var(--primary);
         }
 
-        /* Section Containers */
+        /* Console Panels (Sections) */
         section {
             background-color: var(--bg-card);
-            padding: 35px;
-            border-radius: 20px;
-            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 35px;
             border: 1px solid var(--border);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.5rem;
             color: #ffffff;
-            border-left: 4px solid var(--primary);
-            padding-left: 12px;
-            margin-bottom: 22px;
+            margin-bottom: 25px;
             font-weight: 700;
-            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: ">>>";
+            font-family: 'Fira Code', monospace;
+            color: var(--primary);
+            font-size: 1.1rem;
         }
 
         p.summary-text {
             color: var(--text-muted);
-            font-size: 1.02rem;
+            font-size: 1.05rem;
             text-align: justify;
         }
 
-        /* Grid Layout Elements */
+        /* Multi-Column Skill Matrices */
         .skill-category {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px dashed var(--border);
         }
 
         .skill-category:last-child {
@@ -166,34 +196,43 @@
         }
 
         .skill-category h3 {
-            font-size: 1.05rem;
-            color: #e2e8f0;
-            margin-bottom: 14px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            margin-bottom: 15px;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .tag {
             display: inline-block;
-            background-color: rgba(56, 189, 248, 0.06);
-            color: var(--primary);
+            background-color: rgba(79, 172, 254, 0.04);
+            color: #ffffff;
             padding: 6px 14px;
-            border-radius: 20px;
+            border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 500;
             margin: 0 8px 8px 0;
-            border: 1px solid rgba(56, 189, 248, 0.15);
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            border-color: var(--primary);
+            background-color: var(--primary-glow);
+            transform: translateY(-1px);
         }
 
         .tag.tool {
-            background-color: rgba(45, 212, 191, 0.05);
-            color: var(--accent);
-            border-color: rgba(45, 212, 191, 0.15);
+            background-color: rgba(0, 242, 254, 0.03);
+            color: var(--primary);
         }
 
-        /* Custom Project Cards Layout */
+        /* Project Nodes Layout */
         .project-card {
-            margin-bottom: 30px;
-            padding-bottom: 25px;
+            margin-bottom: 35px;
+            padding-bottom: 30px;
             border-bottom: 1px solid var(--border);
         }
 
@@ -207,30 +246,31 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .project-title {
-            font-size: 1.2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
             color: #ffffff;
             font-weight: 700;
         }
 
         .project-badge {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--dna-green);
             padding: 4px 10px;
             border-radius: 6px;
             font-size: 0.75rem;
             font-weight: 600;
-            text-transform: uppercase;
-            border: 1px solid var(--border);
+            border: 1px solid rgba(16, 185, 129, 0.2);
         }
 
         .project-desc {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 14px;
+            font-size: 0.98rem;
+            margin-bottom: 15px;
         }
 
         .project-bullets, .timeline-bullets {
@@ -241,32 +281,33 @@
         .project-bullets li, .timeline-bullets li {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            list-style-type: square;
         }
 
-        /* Live Preview Screen Styles */
+        /* Live Preview Console Mockup */
         .preview-label {
             display: block;
-            font-size: 0.85rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
             color: var(--primary);
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
         .browser-mockup {
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            background-color: #0f172a;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            background-color: #070a13;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             margin-top: 15px;
         }
 
         .browser-chrome {
-            background-color: #1e293b;
-            padding: 10px 16px;
+            background-color: #0f1526;
+            padding: 12px 18px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -279,21 +320,20 @@
             border-radius: 50%;
             display: inline-block;
         }
-        .dot-red { background-color: #ef4444; }
-        .dot-amber { background-color: #f59e0b; }
-        .dot-green { background-color: #10b981; }
+        .dot-red { background-color: #ff5f56; }
+        .dot-amber { background-color: #ffbd2e; }
+        .dot-green { background-color: #27c93f; }
 
         .browser-address-bar {
             background-color: var(--bg-main);
             color: var(--text-muted);
             font-size: 0.75rem;
-            padding: 4px 12px;
-            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            padding: 6px 14px;
+            border-radius: 8px;
             flex-grow: 1;
-            margin-left: 12px;
+            margin-left: 15px;
             border: 1px solid var(--border);
-            font-family: monospace;
-            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
@@ -301,7 +341,7 @@
         .preview-iframe-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%; /* 16:9 Cinema Aspect */
             background: #ffffff;
         }
 
@@ -312,89 +352,105 @@
             width: 100%;
             height: 100%;
             border: none;
-            background: #ffffff;
         }
 
-        /* Corporate Experience Metrics */
+        /* Central Dogma Timeline (Experience) */
         .timeline-item {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px dashed var(--border);
         }
 
         .timeline-item:last-child {
             margin-bottom: 0;
+            border-left: 2px dashed transparent;
         }
 
-        .timeline-header {
-            margin-bottom: 10px;
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
         }
 
         .role-title {
-            font-size: 1.1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #ffffff;
         }
 
         .company-duration {
-            font-size: 0.85rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
             color: var(--primary);
-            font-weight: 600;
-            margin-top: 2px;
+            margin-top: 4px;
+            margin-bottom: 12px;
         }
 
-        /* Education Layout Alignment */
+        /* Academic Sequences */
         .education-block {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .edu-title {
-            font-size: 1.1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #ffffff;
         }
 
         .edu-meta {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
+            margin-top: 4px;
         }
 
         .edu-meta strong {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .cert-list {
             list-style: none;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
+            margin-top: 25px;
+            padding-top: 22px;
+            border-top: 1px dashed var(--border);
         }
 
         .cert-list li {
             position: relative;
-            padding-left: 22px;
+            padding-left: 25px;
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .cert-list li::before {
-            content: "✦";
+            content: "🧬";
             position: absolute;
             left: 0;
-            color: var(--accent);
+            font-size: 0.9rem;
         }
 
         footer {
             text-align: center;
-            padding: 30px 0;
-            color: #475569;
-            font-size: 0.8rem;
+            padding: 40px 0;
+            font-family: 'Fira Code', monospace;
+            color: #334155;
+            font-size: 0.75rem;
         }
 
         @media (max-width: 640px) {
             header {
                 flex-direction: column;
                 text-align: center;
-                padding: 30px 20px;
+                padding: 35px 20px;
             }
             .project-header {
                 flex-direction: column;
@@ -408,14 +464,14 @@
 
     <div class="container">
         
-        <!-- Premium Header Area -->
+        <!-- Bio-Console Header Base -->
         <header>
             <div class="profile-photo-container">
-                <img src="image.jpg" alt="Kalpana P Profile Photo" class="profile-photo">
+                <img src="image.jpg" alt="KALPANA P Profile Frame" class="profile-photo">
             </div>
             <div class="header-content">
                 <h1><span class="large-initial">K</span>ALPANA <span class="large-initial">P</span></h1>
-                <p class="title">Computational Biologist &amp; Bioinformatics Researcher</p>
+                <p class="title">Translation of Big Biological Data into Executable Insights</p>
                 <div class="contact-info">
                     <span>📍 Bangalore, India</span>
                     <span>📞 +91 9141050502</span>
@@ -427,67 +483,65 @@
 
         <!-- Executive Profiling Summary -->
         <section id="about">
-            <h2>Professional Summary</h2>
+            <h2>Decrypted Sequence (About Me)</h2>
             <p class="summary-text">
-                Detail-oriented Bioinformatics graduate with a strong foundation in biological sciences and hands-on experience in analyzing high-throughput sequencing data, including RNA-seq and single-cell RNA-seq. Proficient in R, Linux, and bioinformatics workflows for data processing, integration, and interpretation. Experienced in transcriptomic analysis, biomarker discovery, functional analysis, and biological data interpretation. Seeking a Bioinformatics, Research, or Computational Biology role to contribute analytical and research skills toward data-driven biological discoveries.
+                Highly motivated Bioinformatics investigator operating at the nexus of computational code and cellular mechanics. Experienced in translating raw multi-omic read pipelines (RNA-seq, single-cell RNA-seq) into actionable structural knowledge graphs. Proficient in engineering reproducible pipelines via R, Linux environments, and heavy statistical packages. Driven by an innate curiosity to parse complex deep transcriptomic datasets, detect novel clinical biomarkers, map pathway target networks, and accelerate scientific discovery via elegant code deployment.
             </p>
         </section>
 
         <!-- Skill Matrices -->
         <section id="skills">
-            <h2>Core Pillars of Expertise</h2>
+            <h2>The Technical Toolbox</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>High-Throughput Sequencing Data Analysis</h3>
+                    <h3>High-Throughput Sequence Ingestion</h3>
                     <div>
-                        <span class="tag">Variant Analysis</span>
-                        <span class="tag">scRNA-seq</span>
-                        <span class="tag">RNA-seq</span>
-                        <span class="tag">Microarray Analysis</span>
-                        <span class="tag">Metagenomics</span>
+                        <span class="tag">Single-Cell RNA-seq</span>
+                        <span class="tag">Bulk RNA-seq Profiling</span>
+                        <span class="tag">Variant Call Annotation</span>
+                        <span class="tag">Microarray Quant</span>
+                        <span class="tag">Metagenomics Ingestion</span>
                         <span class="tag">Differential Gene Expression</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Computational Drug Discovery &amp; Structural Biology</h3>
+                    <h3>Computational Lead Exploration &amp; Structural Space</h3>
                     <div>
                         <span class="tag">Network Pharmacology</span>
-                        <span class="tag">Molecular Docking</span>
-                        <span class="tag">Pathway Enrichment</span>
-                        <span class="tag">PPI Network Construction</span>
-                        <span class="tag">Protein Structure Prediction</span>
-                        <span class="tag">Homology Modeling</span>
-                        <span class="tag">Structure-Based Drug Design</span>
+                        <span class="tag">Molecular In-Silico Docking</span>
+                        <span class="tag">Pathway Enrichment Layouts</span>
+                        <span class="tag">PPI Network Structuring</span>
+                        <span class="tag">Protein Topology Prediction</span>
+                        <span class="tag">Homology Benchmarking</span>
+                        <span class="tag">Structure-Based Design Pipelines</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Programming, Software &amp; Frameworks</h3>
+                    <h3>Executable Environments &amp; Framework Libraries</h3>
                     <div>
-                        <span class="tag tool">Python (Pandas, NumPy, Scikit-Learn)</span>
-                        <span class="tag tool">R (Seurat, DESeq2, Ggplot2)</span>
-                        <span class="tag tool">Linux Command-Line</span>
-                        <span class="tag tool">Bash Scripting</span>
-                        <span class="tag tool">Seurat</span>
-                        <span class="tag tool">CellRanger</span>
-                        <span class="tag tool">PyRx</span>
-                        <span class="tag tool">AutoDock</span>
-                        <span class="tag tool">Cytoscape</span>
-                        <span class="tag tool">Discovery Studio</span>
+                        <span class="tag tool">R Language (Seurat, DESeq2, Ggplot2)</span>
+                        <span class="tag tool">Python Logic (Pandas, NumPy, Scikit-Learn)</span>
+                        <span class="tag tool">Linux System Utilities &amp; Bash Core</span>
+                        <span class="tag tool">CellRanger Engines</span>
+                        <span class="tag tool">PyRx Matrix Automation</span>
+                        <span class="tag tool">AutoDock Analytics</span>
+                        <span class="tag tool">Cytoscape Network Visuals</span>
+                        <span class="tag tool">Discovery Studio Suites</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Biological Databases</h3>
+                    <h3>Biological Knowledge Graphs</h3>
                     <div>
-                        <span class="tag">NCBI</span>
-                        <span class="tag">PDB (Protein Data Bank)</span>
-                        <span class="tag">TCGA</span>
-                        <span class="tag">GEO</span>
-                        <span class="tag">KEGG</span>
-                        <span class="tag">UniProt</span>
-                        <span class="tag">GeneCards</span>
+                        <span class="tag">NCBI Framework</span>
+                        <span class="tag">Protein Data Bank (PDB)</span>
+                        <span class="tag">The Cancer Genome Atlas (TCGA)</span>
+                        <span class="tag">Gene Expression Omnibus (GEO)</span>
+                        <span class="tag">KEGG Networks</span>
+                        <span class="tag">UniProt Engine</span>
+                        <span class="tag">GeneCards Graph</span>
                     </div>
                 </div>
             </div>
@@ -495,22 +549,22 @@
 
         <!-- Project Deployments -->
         <section id="projects">
-            <h2>Featured Research &amp; Projects</h2>
+            <h2>Compiled Projects &amp; Repositories</h2>
 
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-title">🏥 Web-Based Skin Disease Diagnosis Tool</div>
-                    <span class="project-badge">Systems &amp; UI Development</span>
+                    <div class="project-title">🏥 Web-Based Skin Pathology Clinical Pipeline</div>
+                    <span class="project-badge">Clinical UI Architecture</span>
                 </div>
-                <p class="project-desc">Designed and deployed an interactive digital-first clinical dashboard tailored for patient intake management, systematic triage sorting, and clinical analytics tracking.</p>
+                <p class="project-desc">Designed and deployed an interactive, production-ready portal for systematically charting client symptoms, calculating immediate flare triage metrics, and optimizing data collection loops.</p>
                 <ul class="project-bullets">
-                    <li>Built logical classification workflows processing symptoms segmented by precise structural categories (Face, Scalp, Body &amp; Limbs).</li>
-                    <li>Integrated customized risk triage rules parameters mapping low, medium, and urgent flare-ups to support clinical triage flows.</li>
-                    <li>Developed programmatic automation handling front-end client side clinical PDF script generation alongside historical log systems.</li>
+                    <li>Engineered crisp structural decision arrays segregating diagnostics natively by regional quadrants (Face, Scalp, Body, Limbs).</li>
+                    <li>Mapped logical severity weights to route patient conditions across tier alerts (Low, Moderate, Urgent).</li>
+                    <li>Programmed standalone client-side generation processing data outputs directly into printable clinical documents and structured local records logs.</li>
                 </ul>
                 
                 <!-- Live Interactive Preview Screen Container -->
-                <span class="preview-label">🖥️ Interactive Project Preview</span>
+                <span class="preview-label">🖥️ Terminal Sandbox Frame (Live Preview)</span>
                 <div class="browser-mockup">
                     <div class="browser-chrome">
                         <span class="browser-dot dot-red"></span>
@@ -519,57 +573,57 @@
                         <div class="browser-address-bar">https://kalpana123-bio.github.io/skin-disease-checker/</div>
                     </div>
                     <div class="preview-iframe-wrapper">
-                        <iframe class="preview-iframe" src="https://kalpana123-bio.github.io/skin-disease-checker/" loading="lazy" title="Skin Disease Diagnosis Tool Live Preview"></iframe>
+                        <iframe class="preview-iframe" src="https://kalpana123-bio.github.io/skin-disease-checker/" loading="lazy" title="Skin Disease Clinical Pipeline Live Sandbox"></iframe>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-title">🧬 Transcriptomic Analysis &amp; Biomarker Discovery</div>
-                    <span class="project-badge">Next-Gen Sequencing</span>
+                    <div class="project-title">🧬 Transcriptomic Signature Mapping &amp; Biomarker Extraction</div>
+                    <span class="project-badge">Next-Gen Transcriptomics</span>
                 </div>
-                <p class="project-desc">Executed single-cell RNA sequencing (scRNA-seq) evaluation workflows to decode high-dimensional complex biological landscapes and underlying physiological disease expressions.</p>
+                <p class="project-desc">Executed deep-dive single-cell RNA sequencing (scRNA-seq) orchestration to dismantle dense biological environments down to component cell-subset expression metrics.</p>
                 <ul class="project-bullets">
-                    <li>Processed cell-specific data metrics to evaluate critical pathological progressions and differential expressions.</li>
-                    <li>Discovered highly specific genomic diagnostic biomarkers indicating critical pathways for Duchenne Muscular Dystrophy (DMD) and Facioscapulohumeral Muscular Dystrophy (FSHD).</li>
+                    <li>Processed massive cell records matrices to track micro-environment variations during chronic muscular dystrophy states.</li>
+                    <li>Isolated precision signature candidate transcripts serving as robust diagnostic anchors for Duchenne Muscular Dystrophy (DMD) and Facioscapulohumeral Muscular Dystrophy (FSHD).</li>
                 </ul>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-title">💊 Network Pharmacology &amp; Structural Lead Discovery</div>
-                    <span class="project-badge">Computational Drug Discovery</span>
+                    <div class="project-title">💊 Structural In-Silico Pharmacology &amp; Ligand Isolation</div>
+                    <span class="project-badge">Structural Design Matrix</span>
                 </div>
-                <p class="project-desc">Applied virtual screening pipelines, structure-based design metrics, and macromolecular interactions to address target disease areas.</p>
+                <p class="project-desc">Deployed automated screening setups, receptor binding evaluation grids, and protein affinity arrays to target specific disease pathways.</p>
                 <ul class="project-bullets">
-                    <li>Conducted computational modeling and screening validations against target mechanics for Japanese Encephalitis.</li>
-                    <li>Mapped, structuralized, and ranked high-affinity natural phytochemical inhibitors targeting active pathways in Duchenne Muscular Dystrophy (DMD) utilizing automated binding energy grids and Network Pharmacology.</li>
+                    <li>Conducted high-throughput target affinity analytics validating binding energies against Japanese Encephalitis machinery targets.</li>
+                    <li>Modeled and filtered high-efficacy natural phytochemical compound binders against muscular dystrophy elements utilizing network interactions and calculated grid energies.</li>
                 </ul>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-title">📚 Book Chapter Co-Authorship (Springer Nature)</div>
-                    <span class="project-badge">Peer-Reviewed Publication</span>
+                    <div class="project-title">📚 Published Literature Chapter Architecture (Springer Nature)</div>
+                    <span class="project-badge">Peer-Reviewed Systems Research</span>
                 </div>
-                <p class="project-desc">Co-authored a comprehensive chapter investigating advanced data architectures in drug exploration platforms.</p>
+                <p class="project-desc">Co-authored a formal textbook resource analyzing upcoming physical computer models within complex molecule search engines.</p>
                 <ul class="project-bullets">
-                    <li>Title: <em>"From Bits to Qubits: The Quantum Transformation of Computing"</em>.</li>
-                    <li>Explored modern implementations combining quantum-inspired algorithms and hybrid high-performance systems within automated candidate therapeutic profiling pipelines.</li>
+                    <li>Title Manifest: <em>"From Bits to Qubits: The Quantum Transformation of Computing"</em>.</li>
+                    <li>Dissected hybrid architectures fusing advanced computing principles with drug-discovery pipelines to handle tomorrow's heavy candidate tracking arrays.</li>
                 </ul>
             </div>
         </section>
 
         <!-- Professional Trajectory -->
         <section id="experience">
-            <h2>Professional Experience</h2>
+            <h2>Chronology Along the Central Dogma</h2>
             <div class="timeline-item">
                 <div class="role-title">Subject Matter Expert</div>
                 <div class="company-duration">Gradeup Assignments | Mar 2025 – Nov 2025</div>
                 <ul class="timeline-bullets">
-                    <li>Evaluated and designed research-oriented structural assignment frameworks for advanced biology and informatics metrics.</li>
-                    <li>Developed strong core analytical workflows and optimized complex data-driven problem-solving capabilities.</li>
+                    <li>Evaluated, reviewed, and formatted advanced computational biology curricula and highly structured informatics research assignments.</li>
+                    <li>Honed deep technical verification pipelines, auditing multi-variant data problems for precision resolution.</li>
                 </ul>
             </div>
 
@@ -577,41 +631,41 @@
                 <div class="role-title">Bioinformatics Intern</div>
                 <div class="company-duration">TheraCUES, Bangalore | Jan 2025 – Jun 2025</div>
                 <ul class="timeline-bullets">
-                    <li>Analyzed single-cell RNA sequencing (scRNA-seq) datasets to extract critical insights into underlying disease paths.</li>
-                    <li>Isolated molecular marker signatures identifying functional changes for muscular dystrophy targets (DMD &amp; FSHD).</li>
+                    <li>Parsed single-cell dataset matrices, decoupling raw data vectors into visual clustering models via Seurat wrappers.</li>
+                    <li>Identified cell-state transitions and gene markers pointing to diagnostic nodes across neuromuscular dystrophy profiles.</li>
                 </ul>
             </div>
 
             <div class="timeline-item">
-                <div class="role-title">Biotechnology Content Writer Intern</div>
+                <div class="role-title">Biotechnology Communications Specialist Intern</div>
                 <div class="company-duration">Earth5R | Oct 2024 – Dec 2024</div>
                 <ul class="timeline-bullets">
-                    <li>Produced specialized structural literature spanning industrial biotechnology and environmental sciences.</li>
-                    <li>Supported key sustainable target milestones through data translation and rigorous science communication frameworks.</li>
+                    <li>Synthesized evidence-based data articles converting green biochemistry indicators into accessible scientific updates.</li>
+                    <li>Leveraged verified industrial analytics to support sustainability targets through precise communication frameworks.</li>
                 </ul>
             </div>
         </section>
 
         <!-- Education Summary -->
         <section id="education">
-            <h2>Education &amp; Credentials</h2>
+            <h2>Academic Sequences &amp; Credentials</h2>
             <div class="education-block">
                 <div class="edu-title">Master of Science (M.Sc.) in Bioinformatics</div>
-                <div class="edu-meta">REVA University | 2023 – 2025 • <strong>CGPA: 9.3</strong></div>
+                <div class="edu-meta">REVA University | 2023 – 2025 • <strong>Cumulative GPA: 9.3</strong></div>
             </div>
             <div class="education-block">
                 <div class="edu-title">Bachelor of Science (B.Sc.) in Bioinformatics</div>
-                <div class="edu-meta">REVA University | 2021 – 2023 • <strong>CGPA: 8.9</strong></div>
+                <div class="edu-meta">REVA University | 2021 – 2023 • <strong>Cumulative GPA: 8.9</strong></div>
             </div>
             <ul class="cert-list">
-                <li><strong>Metagenomics Data Analysis Certificate</strong> – Mediomix (2024)</li>
+                <li><strong>Metagenomics Data Analysis Certificate</strong> – Mediomix Engine (2024)</li>
                 <li><strong>NPTEL Certificate on Genome Editing and Engineering</strong> (2024)</li>
-                <li><strong>Machine Learning &amp; AI Techniques in Metagenomics</strong> – Leucinrichbio (2024)</li>
+                <li><strong>Machine Learning &amp; AI Techniques in Metagenomics</strong> – Leucinrichbio Matrix (2024)</li>
             </ul>
         </section>
 
         <footer>
-            <p>&copy; 2026 Kalpana P. All Rights Reserved.</p>
+            <p>// EXIT CODE: 0 | Compiled by Kalpana P in 2026</p>
         </footer>
     </div>
 </body>
