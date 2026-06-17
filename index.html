@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalpana P | Bioinformatics Portfolio</title>
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-main: #0b0f19;
@@ -24,7 +29,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.6;
@@ -73,14 +78,21 @@
             flex-grow: 1;
         }
 
+        /* Capitalized Name with Enlarged K and P (+5px) */
         header h1 {
-            font-size: 2.6rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
             margin-bottom: 6px;
             background: linear-gradient(to right, #ffffff, #cbd5e1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        header h1 span.large-initial {
+            font-size: calc(2.5rem + 5px);
+            font-weight: 700;
         }
 
         header p.title {
@@ -124,7 +136,8 @@
         }
 
         h2 {
-            font-size: 1.4rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             color: #ffffff;
             border-left: 4px solid var(--primary);
             padding-left: 12px;
@@ -222,6 +235,7 @@
 
         .project-bullets, .timeline-bullets {
             padding-left: 20px;
+            margin-bottom: 20px;
         }
 
         .project-bullets li, .timeline-bullets li {
@@ -230,21 +244,75 @@
             margin-bottom: 6px;
         }
 
-        .project-link {
-            display: inline-block;
-            color: #0b0f19;
-            background-color: var(--accent);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
+        /* Live Preview Screen Styles */
+        .preview-label {
+            display: block;
             font-size: 0.85rem;
+            color: var(--primary);
             font-weight: 600;
-            margin-top: 15px;
-            transition: opacity 0.2s;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .project-link:hover {
-            opacity: 0.9;
+        .browser-mockup {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #0f172a;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            margin-top: 15px;
+        }
+
+        .browser-chrome {
+            background-color: #1e293b;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .browser-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-red { background-color: #ef4444; }
+        .dot-amber { background-color: #f59e0b; }
+        .dot-green { background-color: #10b981; }
+
+        .browser-address-bar {
+            background-color: var(--bg-main);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 6px;
+            flex-grow: 1;
+            margin-left: 12px;
+            border: 1px solid var(--border);
+            font-family: monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .preview-iframe-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #ffffff;
+        }
+
+        .preview-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #ffffff;
         }
 
         /* Corporate Experience Metrics */
@@ -346,7 +414,7 @@
                 <img src="image.jpg" alt="Kalpana P Profile Photo" class="profile-photo">
             </div>
             <div class="header-content">
-                <h1>Kalpana P</h1>
+                <h1><span class="large-initial">K</span>ALPANA <span class="large-initial">P</span></h1>
                 <p class="title">Computational Biologist &amp; Bioinformatics Researcher</p>
                 <div class="contact-info">
                     <span>📍 Bangalore, India</span>
@@ -361,7 +429,7 @@
         <section id="about">
             <h2>Professional Summary</h2>
             <p class="summary-text">
-                Detail-oriented Bioinformatics graduate with a strong foundation in biological sciences and hands-on experience in analyzing high-throughput sequencing data, including RNA-seq and single-cell RNA-seq[cite: 2]. Proficient in R, Linux, and bioinformatics workflows for data processing, integration, and interpretation[cite: 2]. Experienced in transcriptomic analysis, biomarker discovery, functional analysis, and biological data interpretation[cite: 2]. Seeking a Bioinformatics, Research, or Computational Biology role to contribute analytical and research skills toward data-driven biological discoveries[cite: 2].
+                Detail-oriented Bioinformatics graduate with a strong foundation in biological sciences and hands-on experience in analyzing high-throughput sequencing data, including RNA-seq and single-cell RNA-seq. Proficient in R, Linux, and bioinformatics workflows for data processing, integration, and interpretation. Experienced in transcriptomic analysis, biomarker discovery, functional analysis, and biological data interpretation. Seeking a Bioinformatics, Research, or Computational Biology role to contribute analytical and research skills toward data-driven biological discoveries.
             </p>
         </section>
 
@@ -434,13 +502,26 @@
                     <div class="project-title">🏥 Web-Based Skin Disease Diagnosis Tool</div>
                     <span class="project-badge">Systems &amp; UI Development</span>
                 </div>
-                <p class="project-desc">Designed and deployed an interactive digital-first clinical dashboard tailored for patient intake management, systematic triage sorting, and clinical analytics tracking[cite: 2].</p>
+                <p class="project-desc">Designed and deployed an interactive digital-first clinical dashboard tailored for patient intake management, systematic triage sorting, and clinical analytics tracking.</p>
                 <ul class="project-bullets">
-                    <li>Built logical classification workflows processing symptoms segmented by precise structural categories (Face, Scalp, Body &amp; Limbs)[cite: 2].</li>
-                    <li>Integrated customized risk triage rules parameters mapping low, medium, and urgent flare-ups to support clinical triage flows[cite: 2].</li>
-                    <li>Developed programmatic automation handling front-end client side clinical PDF script generation alongside historical log systems[cite: 2].</li>
+                    <li>Built logical classification workflows processing symptoms segmented by precise structural categories (Face, Scalp, Body &amp; Limbs).</li>
+                    <li>Integrated customized risk triage rules parameters mapping low, medium, and urgent flare-ups to support clinical triage flows.</li>
+                    <li>Developed programmatic automation handling front-end client side clinical PDF script generation alongside historical log systems.</li>
                 </ul>
-                <a href="https://kalpana123-bio.github.io/skin-disease-checker/" target="_blank" class="project-link">View Live Project ↗</a>
+                
+                <!-- Live Interactive Preview Screen Container -->
+                <span class="preview-label">🖥️ Interactive Project Preview</span>
+                <div class="browser-mockup">
+                    <div class="browser-chrome">
+                        <span class="browser-dot dot-red"></span>
+                        <span class="browser-dot dot-amber"></span>
+                        <span class="browser-dot dot-green"></span>
+                        <div class="browser-address-bar">https://kalpana123-bio.github.io/skin-disease-checker/</div>
+                    </div>
+                    <div class="preview-iframe-wrapper">
+                        <iframe class="preview-iframe" src="https://kalpana123-bio.github.io/skin-disease-checker/" loading="lazy" title="Skin Disease Diagnosis Tool Live Preview"></iframe>
+                    </div>
+                </div>
             </div>
 
             <div class="project-card">
@@ -448,10 +529,10 @@
                     <div class="project-title">🧬 Transcriptomic Analysis &amp; Biomarker Discovery</div>
                     <span class="project-badge">Next-Gen Sequencing</span>
                 </div>
-                <p class="project-desc">Executed single-cell RNA sequencing (scRNA-seq) evaluation workflows to decode high-dimensional complex biological landscapes and underlying physiological disease expressions[cite: 2].</p>
+                <p class="project-desc">Executed single-cell RNA sequencing (scRNA-seq) evaluation workflows to decode high-dimensional complex biological landscapes and underlying physiological disease expressions.</p>
                 <ul class="project-bullets">
-                    <li>Processed cell-specific data metrics to evaluate critical pathological progressions and differential expressions[cite: 2].</li>
-                    <li>Discovered highly specific genomic diagnostic biomarkers indicating critical pathways for Duchenne Muscular Dystrophy (DMD) and Facioscapulohumeral Muscular Dystrophy (FSHD)[cite: 2].</li>
+                    <li>Processed cell-specific data metrics to evaluate critical pathological progressions and differential expressions.</li>
+                    <li>Discovered highly specific genomic diagnostic biomarkers indicating critical pathways for Duchenne Muscular Dystrophy (DMD) and Facioscapulohumeral Muscular Dystrophy (FSHD).</li>
                 </ul>
             </div>
 
@@ -460,10 +541,10 @@
                     <div class="project-title">💊 Network Pharmacology &amp; Structural Lead Discovery</div>
                     <span class="project-badge">Computational Drug Discovery</span>
                 </div>
-                <p class="project-desc">Applied virtual screening pipelines, structure-based design metrics, and macromolecular interactions to address target disease areas[cite: 2].</p>
+                <p class="project-desc">Applied virtual screening pipelines, structure-based design metrics, and macromolecular interactions to address target disease areas.</p>
                 <ul class="project-bullets">
-                    <li>Conducted computational modeling and screening validations against target mechanics for Japanese Encephalitis[cite: 2].</li>
-                    <li>Mapped, structuralized, and ranked high-affinity natural phytochemical inhibitors targeting active pathways in Duchenne Muscular Dystrophy (DMD) utilizing automated binding energy grids and Network Pharmacology[cite: 2].</li>
+                    <li>Conducted computational modeling and screening validations against target mechanics for Japanese Encephalitis.</li>
+                    <li>Mapped, structuralized, and ranked high-affinity natural phytochemical inhibitors targeting active pathways in Duchenne Muscular Dystrophy (DMD) utilizing automated binding energy grids and Network Pharmacology.</li>
                 </ul>
             </div>
 
@@ -472,10 +553,10 @@
                     <div class="project-title">📚 Book Chapter Co-Authorship (Springer Nature)</div>
                     <span class="project-badge">Peer-Reviewed Publication</span>
                 </div>
-                <p class="project-desc">Co-authored a comprehensive chapter investigating advanced data architectures in drug exploration platforms[cite: 2].</p>
+                <p class="project-desc">Co-authored a comprehensive chapter investigating advanced data architectures in drug exploration platforms.</p>
                 <ul class="project-bullets">
-                    <li>Title: <em>"From Bits to Qubits: The Quantum Transformation of Computing"</em>[cite: 2].</li>
-                    <li>Explored modern implementations combining quantum-inspired algorithms and hybrid high-performance systems within automated candidate therapeutic profiling pipelines[cite: 2].</li>
+                    <li>Title: <em>"From Bits to Qubits: The Quantum Transformation of Computing"</em>.</li>
+                    <li>Explored modern implementations combining quantum-inspired algorithms and hybrid high-performance systems within automated candidate therapeutic profiling pipelines.</li>
                 </ul>
             </div>
         </section>
@@ -485,28 +566,28 @@
             <h2>Professional Experience</h2>
             <div class="timeline-item">
                 <div class="role-title">Subject Matter Expert</div>
-                <div class="company-duration">Gradeup Assignments | Mar 2025 – Nov 2025[cite: 2]</div>
+                <div class="company-duration">Gradeup Assignments | Mar 2025 – Nov 2025</div>
                 <ul class="timeline-bullets">
-                    <li>Evaluated and designed research-oriented structural assignment frameworks for advanced biology and informatics metrics[cite: 2].</li>
-                    <li>Developed strong core analytical workflows and optimized complex data-driven problem-solving capabilities[cite: 2].</li>
+                    <li>Evaluated and designed research-oriented structural assignment frameworks for advanced biology and informatics metrics.</li>
+                    <li>Developed strong core analytical workflows and optimized complex data-driven problem-solving capabilities.</li>
                 </ul>
             </div>
 
             <div class="timeline-item">
                 <div class="role-title">Bioinformatics Intern</div>
-                <div class="company-duration">TheraCUES, Bangalore | Jan 2025 – Jun 2025[cite: 2]</div>
+                <div class="company-duration">TheraCUES, Bangalore | Jan 2025 – Jun 2025</div>
                 <ul class="timeline-bullets">
-                    <li>Analyzed single-cell RNA sequencing (scRNA-seq) datasets to extract critical insights into underlying disease paths[cite: 2].</li>
-                    <li>Isolated molecular marker signatures identifying functional changes for muscular dystrophy targets (DMD &amp; FSHD)[cite: 2].</li>
+                    <li>Analyzed single-cell RNA sequencing (scRNA-seq) datasets to extract critical insights into underlying disease paths.</li>
+                    <li>Isolated molecular marker signatures identifying functional changes for muscular dystrophy targets (DMD &amp; FSHD).</li>
                 </ul>
             </div>
 
             <div class="timeline-item">
                 <div class="role-title">Biotechnology Content Writer Intern</div>
-                <div class="company-duration">Earth5R | Oct 2024 – Dec 2024[cite: 2]</div>
+                <div class="company-duration">Earth5R | Oct 2024 – Dec 2024</div>
                 <ul class="timeline-bullets">
-                    <li>Produced specialized structural literature spanning industrial biotechnology and environmental sciences[cite: 2].</li>
-                    <li>Supported key sustainable target milestones through data translation and rigorous science communication frameworks[cite: 2].</li>
+                    <li>Produced specialized structural literature spanning industrial biotechnology and environmental sciences.</li>
+                    <li>Supported key sustainable target milestones through data translation and rigorous science communication frameworks.</li>
                 </ul>
             </div>
         </section>
@@ -516,16 +597,16 @@
             <h2>Education &amp; Credentials</h2>
             <div class="education-block">
                 <div class="edu-title">Master of Science (M.Sc.) in Bioinformatics</div>
-                <div class="edu-meta">REVA University | 2023 – 2025 • <strong>CGPA: 9.3</strong>[cite: 2]</div>
+                <div class="edu-meta">REVA University | 2023 – 2025 • <strong>CGPA: 9.3</strong></div>
             </div>
             <div class="education-block">
                 <div class="edu-title">Bachelor of Science (B.Sc.) in Bioinformatics</div>
-                <div class="edu-meta">REVA University | 2021 – 2023 • <strong>CGPA: 8.9</strong>[cite: 2]</div>
+                <div class="edu-meta">REVA University | 2021 – 2023 • <strong>CGPA: 8.9</strong></div>
             </div>
             <ul class="cert-list">
-                <li><strong>Metagenomics Data Analysis Certificate</strong> – Mediomix (2024)[cite: 2]</li>
-                <li><strong>NPTEL Certificate on Genome Editing and Engineering</strong> (2024)[cite: 2]</li>
-                <li><strong>Machine Learning &amp; AI Techniques in Metagenomics</strong> – Leucinrichbio (2024)[cite: 2]</li>
+                <li><strong>Metagenomics Data Analysis Certificate</strong> – Mediomix (2024)</li>
+                <li><strong>NPTEL Certificate on Genome Editing and Engineering</strong> (2024)</li>
+                <li><strong>Machine Learning &amp; AI Techniques in Metagenomics</strong> – Leucinrichbio (2024)</li>
             </ul>
         </section>
 
