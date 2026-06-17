@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalpana P | Bioinformatics Portfolio</title>
+    <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #131a26;
+            --primary: #38bdf8;
+            --primary-muted: #0369a1;
+            --accent: #2dd4bf;
+            --accent-muted: #115e59;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* Premium Hero Section Layout */
+        header {
+            background: linear-gradient(135deg, #131a26 0%, #0f172a 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Premium Aesthetic Photo Frame */
+        .profile-photo-container {
+            flex-shrink: 0;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: 0 4px 20px rgba(45, 212, 191, 0.2);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #1e293b;
+            border: 3px solid var(--bg-card);
+        }
+
+        .header-content {
+            flex-grow: 1;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 6px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p.title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        .contact-info {
+            border-top: 1px solid var(--border);
+            padding-top: 18px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-info span {
+            margin-right: 25px;
+            display: inline-block;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #2ed4bfcc;
+            text-decoration: underline;
+        }
+
+        /* Section Containers */
+        section {
+            background-color: var(--bg-card);
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #ffffff;
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+            margin-bottom: 22px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        p.summary-text {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            text-align: justify;
+        }
+
+        /* Grid Layout Elements */
+        .skill-category {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-category:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .skill-category h3 {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(56, 189, 248, 0.06);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0 8px 8px 0;
+            border: 1px solid rgba(56, 189, 248, 0.15);
+        }
+
+        .tag.tool {
+            background-color: rgba(45, 212, 191, 0.05);
+            color: var(--accent);
+            border-color: rgba(45, 212, 191, 0.15);
+        }
+
+        /* Custom Project Cards Layout */
+        .project-card {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-card:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .project-badge {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .project-bullets, .timeline-bullets {
+            padding-left: 20px;
+        }
+
+        .project-bullets li, .timeline-bullets li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #0b0f19;
+            background-color: var(--accent);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: opacity 0.2s;
+        }
+
+        .project-link:hover {
+            opacity: 0.9;
+        }
+
+        /* Corporate Experience Metrics */
+        .timeline-item {
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-header {
+            margin-bottom: 10px;
+        }
+
+        .role-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .company-duration {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* Education Layout Alignment */
+        .education-block {
+            margin-bottom: 20px;
+        }
+
+        .edu-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .edu-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .edu-meta strong {
+            color: var(--accent);
+        }
+
+        .cert-list {
+            list-style: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .cert-list li {
+            position: relative;
+            padding-left: 22px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .cert-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #475569;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Premium Header Area -->
+        <header>
+            <div class="profile-photo-container">
+                <img src="image.jpg" alt="Kalpana P Profile Photo" class="profile-photo">
+            </div>
+            <div class="header-content">
+                <h1>Kalpana P</h1>
+                <p class="title">Computational Biologist &amp; Bioinformatics Researcher</p>
+                <div class="contact-info">
+                    <span>📍 Bangalore, India</span>
+                    <span>📞 +91 9141050502</span>
+                    <span>✉️ <a href="mailto:kalpana.psn2322002@gmail.com">kalpana.psn2322002@gmail.com</a></span>
+                    <span>🔗 <a href="https://bit.ly/4ez7dn8" target="_blank">LinkedIn</a></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Executive Profiling Summary -->
+        <section id="about">
+            <h2>Professional Summary</h2>
+            <p class="summary-text">
+                Detail-oriented Bioinformatics graduate with a strong foundation in biological sciences and hands-on experience in analyzing high-throughput sequencing data, including RNA-seq and single-cell RNA-seq[cite: 2]. Proficient in R, Linux, and bioinformatics workflows for data processing, integration, and interpretation[cite: 2]. Experienced in transcriptomic analysis, biomarker discovery, functional analysis, and biological data interpretation[cite: 2]. Seeking a Bioinformatics, Research, or Computational Biology role to contribute analytical and research skills toward data-driven biological discoveries[cite: 2].
+            </p>
+        </section>
+
+        <!-- Skill Matrices -->
+        <section id="skills">
+            <h2>Core Pillars of Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>High-Throughput Sequencing Data Analysis</h3>
+                    <div>
+                        <span class="tag">Variant Analysis</span>
+                        <span class="tag">scRNA-seq</span>
+                        <span class="tag">RNA-seq</span>
+                        <span class="tag">Microarray Analysis</span>
+                        <span class="tag">Metagenomics</span>
+                        <span class="tag">Differential Gene Expression</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Computational Drug Discovery &amp; Structural Biology</h3>
+                    <div>
+                        <span class="tag">Network Pharmacology</span>
+                        <span class="tag">Molecular Docking</span>
+                        <span class="tag">Pathway Enrichment</span>
+                        <span class="tag">PPI Network Construction</span>
+                        <span class="tag">Protein Structure Prediction</span>
+                        <span class="tag">Homology Modeling</span>
+                        <span class="tag">Structure-Based Drug Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Programming, Software &amp; Frameworks</h3>
+                    <div>
+                        <span class="tag tool">Python (Pandas, NumPy, Scikit-Learn)</span>
+                        <span class="tag tool">R (Seurat, DESeq2, Ggplot2)</span>
+                        <span class="tag tool">Linux Command-Line</span>
+                        <span class="tag tool">Bash Scripting</span>
+                        <span class="tag tool">Seurat</span>
+                        <span class="tag tool">CellRanger</span>
+                        <span class="tag tool">PyRx</span>
+                        <span class="tag tool">AutoDock</span>
+                        <span class="tag tool">Cytoscape</span>
+                        <span class="tag tool">Discovery Studio</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Biological Databases</h3>
+                    <div>
+                        <span class="tag">NCBI</span>
+                        <span class="tag">PDB (Protein Data Bank)</span>
+                        <span class="tag">TCGA</span>
+                        <span class="tag">GEO</span>
+                        <span class="tag">KEGG</span>
+                        <span class="tag">UniProt</span>
+                        <span class="tag">GeneCards</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Deployments -->
+        <section id="projects">
+            <h2>Featured Research &amp; Projects</h2>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">🏥 Web-Based Skin Disease Diagnosis Tool</div>
+                    <span class="project-badge">Systems &amp; UI Development</span>
+                </div>
+                <p class="project-desc">Designed and deployed an interactive digital-first clinical dashboard tailored for patient intake management, systematic triage sorting, and clinical analytics tracking[cite: 2].</p>
+                <ul class="project-bullets">
+                    <li>Built logical classification workflows processing symptoms segmented by precise structural categories (Face, Scalp, Body &amp; Limbs)[cite: 2].</li>
+                    <li>Integrated customized risk triage rules parameters mapping low, medium, and urgent flare-ups to support clinical triage flows[cite: 2].</li>
+                    <li>Developed programmatic automation handling front-end client side clinical PDF script generation alongside historical log systems[cite: 2].</li>
+                </ul>
+                <a href="https://kalpana123-bio.github.io/skin-disease-checker/" target="_blank" class="project-link">View Live Project ↗</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">🧬 Transcriptomic Analysis &amp; Biomarker Discovery</div>
+                    <span class="project-badge">Next-Gen Sequencing</span>
+                </div>
+                <p class="project-desc">Executed single-cell RNA sequencing (scRNA-seq) evaluation workflows to decode high-dimensional complex biological landscapes and underlying physiological disease expressions[cite: 2].</p>
+                <ul class="project-bullets">
+                    <li>Processed cell-specific data metrics to evaluate critical pathological progressions and differential expressions[cite: 2].</li>
+                    <li>Discovered highly specific genomic diagnostic biomarkers indicating critical pathways for Duchenne Muscular Dystrophy (DMD) and Facioscapulohumeral Muscular Dystrophy (FSHD)[cite: 2].</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">💊 Network Pharmacology &amp; Structural Lead Discovery</div>
+                    <span class="project-badge">Computational Drug Discovery</span>
+                </div>
+                <p class="project-desc">Applied virtual screening pipelines, structure-based design metrics, and macromolecular interactions to address target disease areas[cite: 2].</p>
+                <ul class="project-bullets">
+                    <li>Conducted computational modeling and screening validations against target mechanics for Japanese Encephalitis[cite: 2].</li>
+                    <li>Mapped, structuralized, and ranked high-affinity natural phytochemical inhibitors targeting active pathways in Duchenne Muscular Dystrophy (DMD) utilizing automated binding energy grids and Network Pharmacology[cite: 2].</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">📚 Book Chapter Co-Authorship (Springer Nature)</div>
+                    <span class="project-badge">Peer-Reviewed Publication</span>
+                </div>
+                <p class="project-desc">Co-authored a comprehensive chapter investigating advanced data architectures in drug exploration platforms[cite: 2].</p>
+                <ul class="project-bullets">
+                    <li>Title: <em>"From Bits to Qubits: The Quantum Transformation of Computing"</em>[cite: 2].</li>
+                    <li>Explored modern implementations combining quantum-inspired algorithms and hybrid high-performance systems within automated candidate therapeutic profiling pipelines[cite: 2].</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Professional Trajectory -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="timeline-item">
+                <div class="role-title">Subject Matter Expert</div>
+                <div class="company-duration">Gradeup Assignments | Mar 2025 – Nov 2025[cite: 2]</div>
+                <ul class="timeline-bullets">
+                    <li>Evaluated and designed research-oriented structural assignment frameworks for advanced biology and informatics metrics[cite: 2].</li>
+                    <li>Developed strong core analytical workflows and optimized complex data-driven problem-solving capabilities[cite: 2].</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="role-title">Bioinformatics Intern</div>
+                <div class="company-duration">TheraCUES, Bangalore | Jan 2025 – Jun 2025[cite: 2]</div>
+                <ul class="timeline-bullets">
+                    <li>Analyzed single-cell RNA sequencing (scRNA-seq) datasets to extract critical insights into underlying disease paths[cite: 2].</li>
+                    <li>Isolated molecular marker signatures identifying functional changes for muscular dystrophy targets (DMD &amp; FSHD)[cite: 2].</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="role-title">Biotechnology Content Writer Intern</div>
+                <div class="company-duration">Earth5R | Oct 2024 – Dec 2024[cite: 2]</div>
+                <ul class="timeline-bullets">
+                    <li>Produced specialized structural literature spanning industrial biotechnology and environmental sciences[cite: 2].</li>
+                    <li>Supported key sustainable target milestones through data translation and rigorous science communication frameworks[cite: 2].</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Summary -->
+        <section id="education">
+            <h2>Education &amp; Credentials</h2>
+            <div class="education-block">
+                <div class="edu-title">Master of Science (M.Sc.) in Bioinformatics</div>
+                <div class="edu-meta">REVA University | 2023 – 2025 • <strong>CGPA: 9.3</strong>[cite: 2]</div>
+            </div>
+            <div class="education-block">
+                <div class="edu-title">Bachelor of Science (B.Sc.) in Bioinformatics</div>
+                <div class="edu-meta">REVA University | 2021 – 2023 • <strong>CGPA: 8.9</strong>[cite: 2]</div>
+            </div>
+            <ul class="cert-list">
+                <li><strong>Metagenomics Data Analysis Certificate</strong> – Mediomix (2024)[cite: 2]</li>
+                <li><strong>NPTEL Certificate on Genome Editing and Engineering</strong> (2024)[cite: 2]</li>
+                <li><strong>Machine Learning &amp; AI Techniques in Metagenomics</strong> – Leucinrichbio (2024)[cite: 2]</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Kalpana P. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
