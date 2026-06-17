@@ -222,7 +222,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 166px;
             margin-bottom: 16px;
         }
 
@@ -337,21 +336,31 @@
             font-size: 0.75rem;
         }
 
+        /* Default aspect ratio container */
         .preview-iframe-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%; 
             background: #0f1423;
+            overflow: hidden;
         }
 
+        /* Custom Extended Preview Length Layout */
+        .preview-iframe-wrapper.extended-preview {
+            padding-top: 75%; 
+        }
+
+        /* Zoomed-Out Web View Logic (Set to 80%) */
         .preview-iframe {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 125%;   /* Compensa el escalado inverso de 0.8x (100 / 0.8) */
+            height: 125%;  /* Compensa el escalado inverso de 0.8x (100 / 0.8) */
             border: none;
             background-color: #ffffff;
+            transform: scale(0.8);
+            transform-origin: top left;
         }
 
         /* Central Dogma Timeline (Experience) */
@@ -438,7 +447,7 @@
             font-size: 0.9rem;
         }
 
-        /* Relocated Interactivity Node Panel (Contact Footer) */
+        /* Connection Panel Layout */
         .connect-console {
             background: linear-gradient(135deg, #0f1526 0%, #0c1222 100%);
             border-top: 3px solid var(--primary);
@@ -446,7 +455,7 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: 1fr 1.4fr 1fr;
             gap: 20px;
             margin-top: 25px;
         }
@@ -463,6 +472,7 @@
             text-decoration: none;
             font-size: 1rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
         }
 
         .contact-card-link strong {
@@ -498,6 +508,12 @@
             font-size: 0.75rem;
         }
 
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -511,9 +527,6 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 8px;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -617,7 +630,7 @@
                 </ul>
                 
                 <!-- Live Interactive Web-View Preview Screen Container -->
-                <span class="preview-label">🖥️ Web Interface Simulation</span>
+                <span class="preview-label">🖥️ Web Interface Simulation (80% Scale)</span>
                 <div class="browser-mockup">
                     <div class="browser-chrome">
                         <div class="browser-dots">
@@ -633,7 +646,7 @@
                 </div>
             </div>
 
-            <!-- Project 2: Period Tracker -->
+            <!-- Project 2: Period Tracker (Extended Preview Length Layout) -->
             <div class="project-card">
                 <div class="project-header">
                     <div class="project-title">🩸 Interactive Menstrual Health &amp; Cycle Analytics Tool</div>
@@ -646,8 +659,8 @@
                     <li>Styled a visually highly polished dark workspace focusing on accessible data hierarchy and smooth component transitions.</li>
                 </ul>
                 
-                <!-- Live Interactive Web-View Preview Screen Container -->
-                <span class="preview-label">🖥️ Web Interface Simulation</span>
+                <!-- Live Interactive Web-View Preview Screen Container with extended length wrapper -->
+                <span class="preview-label">🖥️ Web Interface Simulation (80% Scale)</span>
                 <div class="browser-mockup">
                     <div class="browser-chrome">
                         <div class="browser-dots">
@@ -657,7 +670,7 @@
                         </div>
                         <div class="browser-address-bar">https://kalpana123-bio.github.io/period-tracker/</div>
                     </div>
-                    <div class="preview-iframe-wrapper">
+                    <div class="preview-iframe-wrapper extended-preview">
                         <iframe class="preview-iframe" src="https://kalpana123-bio.github.io/period-tracker/" loading="lazy" title="Period Tracker Live Sandbox"></iframe>
                     </div>
                 </div>
@@ -752,7 +765,7 @@
             </ul>
         </section>
 
-        <!-- Relocated & Re-Engineered Connection Node Panel -->
+        <!-- Connection Node Panel -->
         <section id="contact" class="connect-console">
             <h2>Establish Connection Matrix</h2>
             <div class="contact-grid">
@@ -768,7 +781,7 @@
                     <span>✉️</span>
                     <div>
                         <strong>Mail me at</strong>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">kalpana.psn2322002@gmail.com</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px; white-space: nowrap;">kalpana.psn2322002@gmail.com</div>
                     </div>
                 </a>
 
@@ -776,7 +789,7 @@
                     <span>🔗</span>
                     <div>
                         <strong>Connect at</strong>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">LinkedIn / Professional Stream</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-top: 2px;">LinkedIn Stream</div>
                     </div>
                 </a>
             </div>
